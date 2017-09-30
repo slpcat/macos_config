@@ -1,0 +1,4 @@
+MacPorts软件包管理
+https://www.macports.org/install.php
+ZFS文件系统
+https://openzfsonosx.org/wiki/Downloads
