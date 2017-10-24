@@ -2,8 +2,18 @@ MacPorts软件包管理
 https://www.macports.org/install.php
 ZFS文件系统
 https://openzfsonosx.org/wiki/Downloads
+iTerm2终端
+http://www.iterm2.com
 系统打开最多文件限制
 /Library/LaunchDaemons/limit.maxfiles.plist
 最大进程数限制
 /Library/LaunchDaemons/limit.maxproc.plist
+禁止错误报告
+
+/usr/sbin/mDNSResponderHelper
+/usr/sbin/mDNSResponder
+/usr/sbin/blued
+/usr/sbin/syslogd
+/usr/libexec/airportd
+/usr/libexec/logd
 
