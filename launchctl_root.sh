@@ -13,4 +13,8 @@ launchctl unload -w ~/Library/LaunchAgents/com.google.keystone.agent.plist
 launchctl unload -w /System/Library/LaunchDaemons/com.apple.blued.plist
 #apple无线基站
 launchctl unload -w /System/Library/LaunchAgents/com.apple.AirPortBaseStationAgent.plist
-
+launchctl unload -w /System/Library/Services/AppleSpell.service/Contents/Resources
+sudo launchctl remove PhotoAnalysis
+launchctl remove com.apple.photoanalysisd
+launchctl remove com.apple.photolibraryd
+launchctl unload -w /System/Library/LaunchAgents/com.apple.photoanalysisd.plist

@@ -16,6 +16,12 @@ defaults write com.apple.dock springboard-show-duration -int 0
 defaults write com.apple.dock springboard-hide-duration -int 0;killall Dock
 #defaults delete com.apple.dock springboard-show-duration
 #defaults delete com.apple.dock springboard-hide-duration;killall Dock
+#打开Quartz 2D Extreme
+sudo defaults write /Library/Preferences/com.apple.windowserver Quartz2DExtremeEnabled -bool yes
+#关闭beamsync
+sudo defaults write /Library/Preferences/com.apple.windowserver Compositor -dict deferredUpdates 0
+#更改 Launchpad 背景效果默认为清晰
+defaults write com.apple.dock springboard-blur-radius -int 0;killall Dock
 defaults write com.apple.dock springboard-page-duration -int 0;killall Dock
 #defaults delete com.apple.dock springboard-page-duration;killall Dock
 #关闭Dock栏的动画效果
@@ -27,10 +33,12 @@ defaults write com.apple.dock mineffect -string scale
 defaults write -g AppleShowScrollBars Always
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool FALSE
 defaults write -g WebAutomaticSpellingCorrectionEnabled -bool FALSE
+#休眠时间
+#caffeinate -t 900
 #Enable 2D Dock Mode
 defaults write com.apple.dock no-glass -boolean YES
 #Show Only Active Applications
-defaults write com.apple.dock static-only -bool TRUE
+#defaults write com.apple.dock static-only -bool TRUE
 #Change the Maximum Magnification Level
 defaults write com.apple.dock largesize -float 256
 #Remove the Auto-Hide Dock Delay
@@ -93,14 +101,16 @@ defaults write -g ApplePressAndHoldEnabled -boolean true
 # defaults -currentHost read -globalDomain AppleFontSmoothing
 #Change the font smoothing (0=off, 1=light, 2=Medium/flat panel, 3=strong/blurred)
 #This is mostly needed for non-Apple displays. 
-# defaults -currentHost write -globalDomain AppleFontSmoothing -int 0
+defaults -currentHost write -globalDomain AppleFontSmoothing -int 0
 #Restart applications to see the effect
 #Delete the setting completely (restore default)
 #$ defaults -currentHost delete -globalDomain AppleFontSmoothing
 #Set the font anti-aliasing minimum sizes, globally or per-application:
-# defaults -currentHost write .GlobalPreferences AppleSmoothFontsSizeThreshold -int 16
-#$ defaults -currentHost write .GlobalPreferences AppleFontSmoothing -int 0
-#$ defaults -currentHost write com.apple.safari AppleAntiAliasingThreshold -int 16
+defaults -currentHost write .GlobalPreferences AppleSmoothFontsSizeThreshold -int 16
+defaults -currentHost write .GlobalPreferences AppleFontSmoothing -int 0
+defaults -currentHost write com.apple.safari AppleAntiAliasingThreshold -int 16
+#safari dev menu
+defaults write com.apple.safari IncludeDevelopMenu 1
 #Address Book
 #Show Contact Reflection:
 #$ defaults write com.apple.AddressBook reflection -boolean
@@ -289,7 +299,7 @@ sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist Critical
 # defaults write -g AppleSpacesSwitchOnActivate -bool true
 #RemoteManagement
 #Disable Multicast:
-defaults write /Library/Preferences/com.apple.RemoteManagement ARD_MulticastAllowed -bool false
+sudo defaults write /Library/Preferences/com.apple.RemoteManagement ARD_MulticastAllowed -bool false
 #Remote Desktop
 #Set the maximum number of computers that can be observed:
 defaults write com.apple.RemoteDesktop multiObserveMaxPerScreen -integer 9
