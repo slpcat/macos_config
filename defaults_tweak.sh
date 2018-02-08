@@ -22,6 +22,12 @@ sudo defaults write /Library/Preferences/com.apple.windowserver Compositor -dict
 #启用暗黑模式
 defaults write -g AppleInterfaceStyle Dark
 
+#Disable System UI Audio Sound Effects
+defaults write com.apple.systemsound com.apple.sound.uiaudio.enabled -bool false
+defaults write -g com.apple.sound.beep.volume -int 0 
+defaults write -g com.apple.sound.uiaudio.enabled -bool false
+defaults write -g com.apple.springing.enabled -bool false
+
 #关闭文件保存和打印对话框的动画效果
 defaults write -g NSWindowResizeTime -float 0.01
 #defaults delete -g NSWindowResizeTime
@@ -31,6 +37,9 @@ defaults write -g NSWindowResizeTime -float 0.01
 
 #Hide Shutdown Button on Login Window
 #defaults write com.apple.loginwindow ShutDownDisabled -bool
+
+#remove accounts from the login window type this command with the short name of each account you wish to remove
+sudo defaults write /Library/Preferences/com.apple.loginwindow HiddenUsersList -array-add root hmuser cface
 
 #Disable creation of Metadata Files on Network Volumes (avoids creation of .DS_Store and AppleDouble files.)
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
@@ -57,6 +66,9 @@ defaults -currentHost write -globalDomain AppleFontSmoothing -int 0
 defaults -currentHost write .GlobalPreferences AppleSmoothFontsSizeThreshold -int 16
 defaults -currentHost write .GlobalPreferences AppleFontSmoothing -int 0
 defaults -currentHost write com.apple.safari AppleAntiAliasingThreshold -int 16
+#Set the history limit in Safari to a certain number of items and and/or a certain age
+defaults write com.apple.Safari WebKitHistoryItemLimit 2000
+defaults write com.apple.Safari WebKitHistoryAgeInDaysLimit 30
 
 #Change System Fonts
 defaults write -g NSBoldSystemFont LucidaGrande-Bold 
@@ -108,8 +120,6 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 #Software update
 #While applying any changes to SoftwareUpdate defaults, set software update to OFF to avoid any conflict with the defaults system cache. (Also close the System Preferences app)
 sudo softwareupdate --schedule OFF
-#<apply changes>
-#sudo softwareupdate --schedule ON
 
 #Automatically check for updates (required for any downloads):
 sudo defaults write /Library/Preferences/com.apple.SoftwareUpdate.plist AutomaticCheckEnabled -bool false
@@ -132,7 +142,8 @@ defaults write com.apple.loginwindow DisableConsoleAccess -bool true
 #defaults write /Library/Preferences/com.apple.loginwindow LoginwindowText "Your Message"
 
 #Change login screen background
-#defaults write /Library/Preferences/com.apple.loginwindow DesktopPicture "/Library/Desktop Pictures/Aqua Blue.jpg"
+#sudo defaults write /Library/Preferences/com.apple.loginwindow DesktopPicture "/Library/Desktop Pictures/Aqua Blue.jpg"
+sudo defaults write /Library/Preferences/com.apple.loginwindow DesktopPicture ""
 
 #Disable transparency in the menu bar and elsewhere
 defaults write com.apple.universalaccess reduceTransparency -bool true
@@ -144,7 +155,7 @@ defaults write com.apple.universalaccess reduceTransparency -bool true
 #defaults write com.apple.systempreferences com.apple.preference.trackpad.3fdrag-4fNavigate -boolean-neg
 
 #Turn off the “Application Downloaded from Internet” quarantine warning:
-defaults write com.apple.LaunchServices LSQuarantine -bool NO
+defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 #Show the ~/Library and /Voluemes folder
 chflags nohidden ~/Library
@@ -157,21 +168,21 @@ sudo chflags nohidden /Volumes
 defaults write -g NSDocumentSaveNewDocumentsToCloud -bool false
 
 #Expand 'Save As…' dialog boxes by default:
-defaults write -g NSNavPanelExpandedStateForSaveMode -boolean true
+defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
 defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
 
 #Expand print panel dialog boxes by default:
-defaults write -g PMPrintingExpandedStateForPrint -boolean true
+defaults write -g PMPrintingExpandedStateForPrint -bool true
 defaults write -g PMPrintingExpandedStateForPrint2 -bool true
 
 #Global User Interface Scale Multiplier:
 #defaults write -g AppleDisplayScaleFactor -float
 
 #Enable automatic dash replacement everywhere:
-defaults write -g WebAutomaticDashSubstitutionEnabled -boolean true
+defaults write -g WebAutomaticDashSubstitutionEnabled -bool true
 
 #Enable automatic text replacement everywhere:
-defaults write -g WebAutomaticTextReplacementEnabled -boolean true
+defaults write -g WebAutomaticTextReplacementEnabled -bool true
 
 #Quit Printer App after Print Jobs complete:
 # defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
@@ -275,7 +286,7 @@ defaults write com.apple.dock showhidden -bool true
 # defaults write com.apple.dock persistent-others -array-add '{ "tile-data" = { "list-type" = 1; }; "tile-type" = "recents-tile"; }'
 
 #Stacks, Activate Mouse Over Gradient:
-defaults write com.apple.dock mouse-over-hilte-stack -boolean true
+defaults write com.apple.dock mouse-over-hilte-stack -bool true
 
 #调整休眠时间
 #caffeinate -t 900
@@ -329,7 +340,7 @@ defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Show path in Title Bar
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
+defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 # New window points to home
 defaults write com.apple.finder NewWindowTarget -string "PfHm"
@@ -417,7 +428,7 @@ defaults write com.apple.Safari WebKitUsesEncodingDetector -bool true
 # defaults write com.apple.Safari NSToolTipsFontSize -float
 
 # Re-enable backspace/delete to go back in Safari
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool YES
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool true
 
 #AddressBook相关设置
 #Show Contact Reflection:
@@ -453,7 +464,7 @@ defaults write com.apple.dashboard mcx-disabled -boolean true
 #$ defaults write com.apple.NetworkBrowser ODSSupported -boolean
 
 #Enable movie preview thumbnails:
-defaults write com.apple.QuickLookDaemon QLDisableQTThumbnails -boolean-neg
+defaults write com.apple.QuickLookDaemon QLDisableQTThumbnails -bool true
  
 #Front Row launcher
 #Set preferred display to use:
@@ -465,8 +476,8 @@ defaults write com.apple.QuickLookDaemon QLDisableQTThumbnails -boolean-neg
 
 #iTunes相关设置
 #Make the arrows next to artist & album jump to local iTunes library folders instead of Store:
-defaults write com.apple.iTunes show-store-link-arrows -bool YES
-defaults write com.apple.iTunes invertStoreLinks -bool YES
+defaults write com.apple.iTunes show-store-link-arrows -bool true
+defaults write com.apple.iTunes invertStoreLinks -bool true
 
 #To restore the default change the YES to NO
 #Restore the standard close/minimise buttons:
@@ -480,7 +491,7 @@ defaults write com.apple.iTunes invertStoreLinks -bool YES
 defaults write com.apple.mail MinimumHTMLFontSize 12
 
 #Force all Mail messages to display as plain text:
-defaults write com.apple.mail PreferPlainText -bool TRUE
+defaults write com.apple.mail PreferPlainText -bool true
 
 #For rich text (the default) set it to FALSE
 #Disable tracking of Previous Recipients:
@@ -551,7 +562,7 @@ defaults write com.apple.dock workspaces-swoosh-animation-off -bool YES
 
 #TimeMachine相关设置
 #Auto backup:
-defaults write com.apple.TimeMachine AutoBackup =0
+defaults write com.apple.TimeMachine AutoBackup -bool false
 #Backup frequency default= 3600 seconds (every hour) 1800 = 1/2 hour, 7200=2 hours 
 #sudo defaults write /System/Library/Launch Daemons/com.apple.backupd-auto StartInterval -int 1800
 
