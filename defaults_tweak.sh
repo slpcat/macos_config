@@ -59,6 +59,7 @@ defaults write -g ApplePressAndHoldEnabled -boolean true
 #Change the font smoothing (0=off, 1=light, 2=Medium/flat panel, 3=strong/blurred)
 #This is mostly needed for non-Apple displays. 
 defaults -currentHost write -globalDomain AppleFontSmoothing -int 0
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool FALSE
 #Restart applications to see the effect
 #Delete the setting completely (restore default)
 #$ defaults -currentHost delete -globalDomain AppleFontSmoothing
