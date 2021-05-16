@@ -16,6 +16,9 @@ defaults write -g WebContinuousSpellCheckingEnabled -bool false
 #打开Quartz 2D Extreme
 sudo defaults write /Library/Preferences/com.apple.windowserver Quartz2DExtremeEnabled -bool true
 
+#开启 macOS 的 HiDPI 选项
+sudo defaults write /Library/Preferences/com.apple.windowserver.plist DisplayResolutionEnabled -bool true
+
 #关闭beamsync
 sudo defaults write /Library/Preferences/com.apple.windowserver Compositor -dict deferredUpdates 0
 

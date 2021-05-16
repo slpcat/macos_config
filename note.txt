@@ -1,12 +1,24 @@
-MacPorts软件包管理
-https://www.macports.org/install.php
 HomeBrew软件包管理
 https://brew.sh
+
 ZFS文件系统
 https://openzfsonosx.org/wiki/Downloads
+
 iTerm2终端
 http://www.iterm2.com
 
+效率软件Alfred 3 Mac上非常强大的效率软件，代替spotlight的最好选择。
+
+IINA是非常优秀的开源视频软件，调整倍速、在线字幕搜索、简洁的设计、URL播放。
+
+系统清理工具
+MacBooster 7
+
+App Cleaner & Uninstaller
+
+压缩工具
+
+The Unarchiver
 
 
 系统打开最多文件限制
@@ -17,8 +29,27 @@ http://www.iterm2.com
 
 /usr/sbin/mDNSResponderHelper
 /usr/sbin/mDNSResponder
-/usr/sbin/blued
 /usr/sbin/syslogd
 /usr/libexec/airportd
 /usr/libexec/logd
 
+
+使用verbols显示启动过程可以：
+
+sudo nvram boot-args "-v"
+
+取消自动开机：
+
+sudo nvram AutoBoot=%00
+
+重新启用自动开机：
+
+sudo nvram AutoBoot=%03
+
+开启开机音效：
+
+sudo nvram BootAudio=%01
+
+取消开机音效：
+
+sudo nvram BootAudio=%00
