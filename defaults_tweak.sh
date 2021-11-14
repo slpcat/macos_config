@@ -152,6 +152,33 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow DesktopPicture ""
 #Disable transparency in the menu bar and elsewhere
 defaults write com.apple.universalaccess reduceTransparency -bool true
 
+#Reduce Motion & Transparency
+defaults write com.apple.Accessibility DifferentiateWithoutColor -int 1
+defaults write com.apple.Accessibility ReduceMotionEnabled -int 1
+defaults write com.apple.universalaccess reduceMotion -int 1
+defaults write com.apple.universalaccess reduceTransparency -int 1
+defaults write com.apple.Accessibility ReduceMotionEnabled -int 1
+
+#Enable multi-sessions
+sudo /usr/bin/defaults write .GlobalPreferences MultipleSessionsEnabled -bool TRUE
+
+defaults write "Apple Global Domain" MultipleSessionsEnabled -bool true
+
+#Disable screen locking
+#defaults write com.apple.loginwindow DisableScreenLock -bool true
+
+#Show a lighter username/password prompt instead of a list of all the users
+
+defaults write /Library/Preferences/com.apple.loginwindow.plist SHOWFULLNAME -bool true
+defaults write com.apple.loginwindow AllowList -string '*'
+
+#Disable saving the application state on shutdown
+
+defaults write com.apple.loginwindow TALLogoutSavesState -bool false
+
+#Disable apps from going to sleep at all
+defaults write NSGlobalDomain NSAppSleepDisabled -bool YES
+
 #Enable multitouch trackpad auto orientation sensing (for all users) 
 #defaults write /Library/Preferences/com.apple.MultitouchSupport ForceAutoOrientation -boolean
 

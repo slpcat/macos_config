@@ -67,6 +67,8 @@ sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.CrashReporterSu
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.softwareupdated.plist
 sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.softwareupdate_notify_agent.plist
 sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.diagnostics_agent.plist
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.diagnosticd.plist
+
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.airportd.plist
 sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.suggestd.plist
 sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.knowledge-agent.plist
