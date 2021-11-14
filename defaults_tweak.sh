@@ -3,6 +3,8 @@
 #系统级设置
 #关闭窗口和对话框弹出的动画特效
 defaults write -g NSAutomaticWindowAnimationEnabled -bool false
+defaults write -g NSAutomaticWindowAnimationsEnabled -bool FALSE
+
 #defaults delete -g NSAutomaticWindowAnimationEnabled
 
 #开启滚动条
