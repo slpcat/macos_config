@@ -53,3 +53,5 @@ sudo nvram BootAudio=%01
 取消开机音效：
 
 sudo nvram BootAudio=%00
+性能模式
+sudo nvram boot-args="serverperfmode=1 $(nvram boot-args 2>/dev/null | cut -f 2-)"
