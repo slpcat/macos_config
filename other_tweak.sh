@@ -1,7 +1,12 @@
 #!/bin/sh
+
 #关闭spotlight索引
 # massively increase virtualized macOS by disabling spotlight.
 sudo mdutil -i off -a
+
+sudo cp	sysctl.conf /etc/sysctl.conf
+sudo cp limit.maxfiles.plist /Library/LaunchDaemons/limit.maxfiles.plist
+sudo cp limit.maxproc.plist /Library/LaunchDaemons/limit.maxproc.plist
 
 #使用verbols显示启动过程可以：
 sudo nvram boot-args "srv=1 -v"

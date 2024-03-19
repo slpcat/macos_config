@@ -5,9 +5,6 @@
 #删除快照
 #diskutil apfs deletesnapshot disk2s5 -name 快照名
 
-sudo cp limit.maxfiles.plist /Library/LaunchDaemons/limit.maxfiles.plist
-sudo cp limit.maxproc.plist /Library/LaunchDaemons/limit.maxproc.plist
-
 #禁止Spotlight搜索
 sudo launchctl bootout system /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
 sudo mv /System/Library/LaunchDaemons/com.apple.metadata.mds.plist /System/Library/LaunchAgentsIgnored
