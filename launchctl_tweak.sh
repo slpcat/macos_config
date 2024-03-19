@@ -49,7 +49,7 @@ sudo mv /System/Library/LaunchAgents/com.apple.photoanalysisd.plist /System/Libr
 #sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
 
 #apple无线基站
-sudo launchctl remove com.apple.AirPortBaseStationAgent
+#sudo launchctl remove com.apple.AirPortBaseStationAgent
 sudo launchctl remove com.apple.softwareupdated
 
 #蓝牙
@@ -69,7 +69,7 @@ sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.softwareupdate_n
 sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.diagnostics_agent.plist
 sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.diagnosticd.plist
 
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.airportd.plist
+#sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.airportd.plist
 sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.suggestd.plist
 sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.knowledge-agent.plist
 sudo launchctl unload -w /System/Library/LaunchAgents/com.apple.CallHistorySyncHelper.plist

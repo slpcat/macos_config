@@ -212,10 +212,10 @@ defaults write -g PMPrintingExpandedStateForPrint2 -bool true
 #defaults write -g AppleDisplayScaleFactor -float
 
 #Enable automatic dash replacement everywhere:
-defaults write -g WebAutomaticDashSubstitutionEnabled -bool true
+#defaults write -g WebAutomaticDashSubstitutionEnabled -bool true
 
 #Enable automatic text replacement everywhere:
-defaults write -g WebAutomaticTextReplacementEnabled -bool true
+#defaults write -g WebAutomaticTextReplacementEnabled -bool true
 
 #Quit Printer App after Print Jobs complete:
 # defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
@@ -455,7 +455,7 @@ defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 defaults write com.apple.Safari IncludeDebugMenu -bool true
 
 #Enable encoding detector:
-defaults write com.apple.Safari WebKitUsesEncodingDetector -bool true
+#defaults write com.apple.Safari WebKitUsesEncodingDetector -bool true
 
 #Tooltip Font Size:
 # defaults write com.apple.Safari NSToolTipsFontSize -float

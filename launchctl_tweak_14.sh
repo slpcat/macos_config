@@ -5,6 +5,9 @@
 #删除快照
 #diskutil apfs deletesnapshot disk2s5 -name 快照名
 
+sudo cp limit.maxfiles.plist /Library/LaunchDaemons/limit.maxfiles.plist
+sudo cp limit.maxproc.plist /Library/LaunchDaemons/limit.maxproc.plist
+
 #禁止Spotlight搜索
 sudo launchctl bootout system /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
 sudo mv /System/Library/LaunchDaemons/com.apple.metadata.mds.plist /System/Library/LaunchAgentsIgnored
@@ -12,13 +15,19 @@ sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.Spotlight.p
 sudo mv /System/Library/LaunchAgents/com.apple.Spotlight.plist /System/Library/LaunchAgentsIgnored
 
 #禁止google软件更新
-sudo launchctl bootout system /Library/LaunchDaemons/com.google.keystone.daemon.plist
 sudo launchctl bootout system /Library/LaunchAgents/com.google.keystone.root.agent 
-launchctl bootout system ~/Library/LaunchAgents/com.google.keystone.agent.plist
 
-sudo launchctl bootout system /Library/LaunchAgents/com.tencent.LemonMonitor.plist
+sudo launchctl bootout system /Library/LaunchDaemons/com.google.keystone.daemon.plist
+sudo launchctl bootout system /Library/LaunchDaemons/com.microsoft.EdgeUpdater.wake.system.plist
+sudo launchctl bootout system /Library/LaunchDaemons/com.microsoft.autoupdate.helper.plist
+
+launchctl bootout system ~/Library/LaunchAgents/com.google.keystone.agent.plist
+launchctl bootout system ~/Library/LaunchAgents/com.google.GoogleUpdater.wake.plist
+
 
 sudo launchctl bootout system /Library/LaunchAgents/com.microsoft.update.agent.plist
+#sudo launchctl bootout system /Library/LaunchAgents/com.tencent.LemonMonitor.plist
+
 
 #打印机
 #sudo launchctl bootout system /System/Library/LaunchDaemons/org.cups.cupsd.plist
@@ -49,8 +58,8 @@ sudo mv /System/Library/LaunchAgents/com.apple.photoanalysisd.plist /System/Libr
 #sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.notificationcenterui.plist
 
 #apple无线基站
-sudo launchctl remove com.apple.AirPortBaseStationAgent
-sudo launchctl remove com.apple.softwareupdated
+#sudo launchctl remove com.apple.AirPortBaseStationAgent
+#sudo launchctl remove com.apple.softwareupdated
 
 #蓝牙
 #sudo launchctl bootout system /System/Library/LaunchDaemons/com.apple.bluetoothd.plist
@@ -64,12 +73,12 @@ sudo launchctl bootout system /Library/LaunchDaemons/com.alipay.DispatcherServic
 #launchctl bootout system /System/Library/LaunchAgents/com.apple.touchbar.agent.plist
 sudo launchctl bootout system /System/Library/LaunchDaemons/com.apple.SubmitDiagInfo.plist
 sudo launchctl bootout system /System/Library/LaunchDaemons/com.apple.CrashReporterSupportHelper.plist
-sudo launchctl bootout system /System/Library/LaunchDaemons/com.apple.softwareupdated.plist
-sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.softwareupdate_notify_agent.plist
+#sudo launchctl bootout system /System/Library/LaunchDaemons/com.apple.softwareupdated.plist
+#sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.softwareupdate_notify_agent.plist
 sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.diagnostics_agent.plist
 sudo launchctl bootout system /System/Library/LaunchDaemons/com.apple.diagnosticd.plist
 
-sudo launchctl bootout system /System/Library/LaunchDaemons/com.apple.airportd.plist
+#sudo launchctl bootout system /System/Library/LaunchDaemons/com.apple.airportd.plist
 sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.suggestd.plist
 sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.knowledge-agent.plist
 sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.CallHistorySyncHelper.plist

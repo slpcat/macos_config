@@ -16,6 +16,9 @@ MacBooster 7
 
 App Cleaner & Uninstaller
 
+beamoff
+https://github.com/c823969351/beamoff
+
 压缩工具
 
 The Unarchiver
