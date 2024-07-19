@@ -19,6 +19,9 @@ App Cleaner & Uninstaller
 beamoff
 https://github.com/c823969351/beamoff
 
+老式mac电脑装新版macOS
+https://dortania.github.io/OpenCore-Legacy-Patcher/
+
 压缩工具
 
 The Unarchiver

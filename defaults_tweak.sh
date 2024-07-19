@@ -7,6 +7,8 @@ defaults write -g NSAutomaticWindowAnimationsEnabled -bool FALSE
 
 #defaults delete -g NSAutomaticWindowAnimationEnabled
 
+defaults write com.apple.menuextra.clock "DateFormat" 'EEE MMM d j:mm:ss a'
+
 #开启滚动条
 defaults write -g AppleShowScrollBars Always
 
