@@ -101,3 +101,4 @@ sudo launchctl bootout system /System/Library/LaunchDaemons/com.apple.backupd.pl
 #sudo launchctl bootout system /System/Library/LaunchDaemons/com.apple.ifdreader.plist
 #sudo launchctl bootout system /System/Library/LaunchDaemons/com.apple.opendirectoryd.plist
 #sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.CommCenter-osx.plist
+#sudo launchctl bootout system  /System/Library/LaunchDaemons/com.apple.mDNSresponder.plist
