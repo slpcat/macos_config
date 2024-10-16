@@ -26,6 +26,9 @@ https://dortania.github.io/OpenCore-Legacy-Patcher/
 
 The Unarchiver
 
+docker
+
+colima start
 
 系统打开最多文件限制
 /Library/LaunchDaemons/limit.maxfiles.plist
