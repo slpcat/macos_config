@@ -80,7 +80,12 @@ sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.suggestd.pl
 sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.knowledge-agent.plist
 sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.CallHistorySyncHelper.plist
 sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.CallHistoryPluginHelper.plist
+sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.Siri.agent.plist
+sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.siriactionsd.plist
+sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.siriinferenced.plist
 sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.siriknowledged.plist
+sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.sirittsd.plist
+sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.SiriTTSTrainingAgent.plist
 sudo launchctl bootout system /System/Library/LaunchDaemons/com.apple.sysdiagnose.plist
 #sudo launchctl bootout system /System/Library/LaunchDaemons/com.apple.AirPlayXPCHelper.plist
 #sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.AirPlayUIAgent.plist
@@ -102,3 +107,13 @@ sudo launchctl bootout system /System/Library/LaunchDaemons/com.apple.backupd.pl
 #sudo launchctl bootout system /System/Library/LaunchDaemons/com.apple.opendirectoryd.plist
 #sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.CommCenter-osx.plist
 #sudo launchctl bootout system  /System/Library/LaunchDaemons/com.apple.mDNSresponder.plist
+#sudo launchctl bootout system /System/Library/PrivateFrameworks/CloudTelemetry.framework/Versions/A/XPCServices/CloudTelemetryService.xpc/Contents/MacOS/CloudTelemetryService
+
+sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.speech.speechdatainstallerd.plist
+sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.speech.speechsynthesisd.arm64.plist
+sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.speech.speechsynthesisd.x86_64.plist
+sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.speech.synthesisserver.plist
+sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.Spotlight.plist
+sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.spotlightknowledged.importer.plist
+sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.spotlightknowledged.plist
+sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.spotlightknowledged.updater.plist

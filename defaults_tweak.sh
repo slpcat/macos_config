@@ -54,6 +54,9 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 #Disable creation of Metadata Files on USB Volumes (avoids creation of .DS_Store and AppleDouble files.)
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
+#disable save to iCloud
+sudo defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
 # Disable mouse pointer "shake to locate"
 defaults write ~/Library/Preferences/.GlobalPreferences CGDisableCursorLocationMagnification -bool YES
 

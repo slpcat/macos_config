@@ -17,3 +17,5 @@ sudo nvram AutoBoot=%00
 sudo nvram BootAudio=%00
 
 sudo nvram srv=1
+
+sudo nvram boot-args="vm_compressor=2 serverperfmode=1 srv=1 -v"
