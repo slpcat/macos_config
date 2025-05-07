@@ -9,8 +9,14 @@ defaults write -g NSAutomaticWindowAnimationsEnabled -bool FALSE
 
 defaults write com.apple.menuextra.clock "DateFormat" 'EEE MMM d j:mm:ss a'
 
+# 调整桌面图标大小
+defaults write com.apple.finder DesktopViewOptions -dict-add IconSize -integer 32
+
 #开启滚动条
 defaults write -g AppleShowScrollBars Always
+
+# 开启三指拖移
+#defaults write com.apple.trackpad TrackpadEnableSecondaryClick -bool YES
 
 #禁止拼写检查
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
@@ -56,6 +62,8 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 #disable save to iCloud
 sudo defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+#disable the iCloud prompt when you login
+sudo defaults write "/System/Library/User Template/Non_localized/Library/Preferences/com.apple.SetupAssistant" DidSeeCloudSetup -bool TRUE
 
 # Disable mouse pointer "shake to locate"
 defaults write ~/Library/Preferences/.GlobalPreferences CGDisableCursorLocationMagnification -bool YES
@@ -117,6 +125,12 @@ defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 
 # Enable AirDrop over Ethernet
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
+
+#disable OCSP 
+sudo defaults write /Library/Preferences/com.apple.security.revocation.plist OCSPStyle None
+sudo defaults write /Library/Preferences/com.apple.security.revocation.plist CRLStyle None
+sudo defaults write com.apple.security.revocation.plist OCSPStyle None
+sudo defaults write com.apple.security.revocation.plist CRLStyle None
 
 #电源管理
 # Disable Mac from sleeping entirely
@@ -361,6 +375,11 @@ defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
 #Disable the warning when changing a file extension
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Disable Disk Image Verification: Verifying ...
+defaults write  com.apple.frameworks.diskimages skip-verify -bool true
+defaults write  com.apple.frameworks.diskimages skip-verify-locked -bool true
+defaults write  com.apple.frameworks.diskimages skip-verify-remote -bool true
 
 # Automatically Open A New Finder Window When A Volume Is Mounted
 defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
@@ -640,4 +659,57 @@ defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool
 defaults write com.googlecode.iterm2 NSScrollAnimationEnabled -bool false
 
 #com.apple.TextEdit
+
+defaults write com.apple.iphonesimulator AllowFullscreenMode -bool YES
+defaults write com.apple.dt.Xcode ShowBuildOperationDuration YES
+defaults write com.apple.dt.Xcode BuildSystemScheduleInherentlyParallelCommandsExclusively -bool YES
+
+defaults write .GlobalPreferences MultipleSessionsEnabled -bool TRUE
+
+defaults write "Apple Global Domain" MultipleSessionsEnabled -bool true
+defaults write com.apple.loginwindow TALLogoutSavesState -bool false
+defaults write -g network_enable-l4s -bool true
+defaults write com.apple.finder CalculateAllSizes -bool false
+
+defaults write -g NSAutomaticWindowAnimationsEnabled -bool false
+defaults write -g NSWindowResizeTime -float 0.001
+defaults write -g NSToolbarFullScreenAnimationDuration -float 0
+defaults write -g NSToolbarTitleViewRolloverDelay -float 0
+defaults write -g NSDocumentRevisionsWindowTransformAnimation -bool false
+defaults write -g QLPanelAnimationDuration -float 0
+defaults write -g NSScrollAnimationEnabled -bool false
+defaults write -g NSBrowserColumnAnimationSpeedMultiplier -float 0
+defaults write -g NSScrollViewRubberbanding -bool false
+defaults write com.apple.CrashReporter DialogType none	
+defaults write com.apple.finder DisableAllAnimations -bool true
+defaults write com.apple.finder AnimateInfoPanes -bool false
+defaults Write com.apple.finder AnimateSnapToGrid -bool false
+defaults write com.apple.finder FXEnableSlowAnimation -bool false
+defaults write com.apple.finder QLEnableSlowMotion -bool false
+defaults write com.apple.dock expose-animation-duration -float 0
+defaults write com.apple.dock workspaces-swoosh-animation-off -bool YES	
+defaults write com.apple.dock launchanim -bool false
+defaults write com.apple.dock workspaces-edge-delay -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0
+defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock springboard-show-duration -float 0
+defaults write com.apple.dock springboard-hide-duration -float 0
+defaults write com.apple.dock sopringboard-page-duration -float 0
+
+defaults write com.apple.universalaccess reduceTransparency -bool true
+sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -deactivate -stop
+defaults write com.apple.Terminal FocusFollowsMouse -string YES
+defaults write com.apple.finder AppleShowAllFiles true
+defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+sudo defaults write /Library/Preferences/com.apple.driver.AppleIRController DeviceEnabled -int 0
+sudo defaults write /System/Library/LaunchDaemons/com.apple.mDNSResponder.plist ProgramArguments -array-add "-NoMulticastAdvertisements"
+defaults write com.apple.NetworkBrowser BrowseAllInterfaces -bool true
+
+defaults write com.apple.Mail DisableSendAnimations -bool true
+defaults write com.apple.Mail DisableReplyAnimations -bool true
+
+defaults write com.apple.Safari WebKitInitialTimedLayoutDelay 0.1
+defaults write com.apple.Safari WebKitResourceTimedLayoutDelay 0.1
 
