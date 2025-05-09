@@ -69,6 +69,8 @@ sudo nvram boot-args="serverperfmode=1 $(nvram boot-args 2>/dev/null | cut -f 2-
 launchctl_tweak.sh mac OS 10.x-13.x
 launchctl_tweak_14.sh mac OS 14.x
 
+https://github.com/rtrouton/profiles.git
+https://github.com/ink-splatters/macOS-profiles.git
 
 如何删除Mac OS Monterey自带（预装）软件
 macOS Big Sur及以后版本相对于之前的版本，系统完整性（System Integrity Protection，SIF）保护进一步增强， 在关闭 SIP 后，仍无法修改 System 文件夹下文件？下面介绍在macOS Monterey12.6.1中如何删除自带的软件。
