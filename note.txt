@@ -68,3 +68,59 @@ sudo nvram boot-args="serverperfmode=1 $(nvram boot-args 2>/dev/null | cut -f 2-
 
 launchctl_tweak.sh mac OS 10.x-13.x
 launchctl_tweak_14.sh mac OS 14.x
+
+
+如何删除Mac OS Monterey自带（预装）软件
+macOS Big Sur及以后版本相对于之前的版本，系统完整性（System Integrity Protection，SIF）保护进一步增强， 在关闭 SIP 后，仍无法修改 System 文件夹下文件？下面介绍在macOS Monterey12.6.1中如何删除自带的软件。
+
+1、关闭系统完整性（SIP）
+
+   开机按住Commond+R，进入系统Recovery模式（在黑屏的时候按住 command + R 不放，直到 apple logo 画面出现）即可进入恢复模式），然后点击菜单栏，“实用工具 >> 终端”。打开终端（terminal）执行如下命令：
+
+csrutil  disable
+
+csrutil  authenticated-root disable
+
+关闭系统完整性（SIP）
+
+2、正常重启系统，可以在终端（terminal）查看是否已将SIP关掉：
+
+csrutil status    
+
+csrutil authenticated-root status
+
+3、查找挂载系统分区的磁盘位置，在终端（terminal）使用diskutil  list查找自己的系统分区，disk1s5为我的系统分区（在/dev目录下，其挂载的设备名称是 /dev/disk1s5)
+4、在当前用户下创建一个挂载目录（mac-mount）
+
+mkdir  ~/mac-mount
+
+5、通过下面命令将系统分区/dev/disk1s5重新挂在到mac-mount目录
+
+sudo mount -o nobrowse -t apfs /dev/disk1s5  ~/mount
+
+这样系统分区就重新挂载到了~/mac-mount目录下，从这个目录进去就是系统根目录，而且这个目录是可读可写的，我们就可以进行相应的修改操作了。
+
+6、删除自带软件的操作
+
+进入目录（~/mac-mount）即可看到挂载的系统分区，再进入系统自带（预装）软件目录，可以根据自己的情况删除不需要的软件。
+
+注意：为了准确删除选定的软件，可以在“访达”的“应用程序”中选择不需要的软件，单击鼠标右键，在快捷菜单选中“显示简介”查看软件的具体名称，如下图。
+
+然后在终端中用命令：sudo rm –rf “文件名/文件夹” 删除之。
+
+
+在此目录中完成自带（预装）软件删除工作。
+
+7、最后在终端（terminal）用下面命令重建系统新的快照（snapshot）
+
+sudo bless --folder ~/mac-mount/System/Library/CoreServices --bootefi --create-snapshot
+
+完成后重启系统，会发现挂载的磁盘消失，而修改的设置已经写入到原先不能更改的系统文件中了，应用程序中相应的自带（预装）软件被删除。
+
+8、解决问题后，再次重启进入Recovery模式，打开终端（terminal），输入：
+
+csrutil enable
+
+csrutil authenticated-root enable
+
+重新开启SIP以免系统失去安全防护。也可根据自己情况是否重新开启SIP。
