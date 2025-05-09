@@ -142,6 +142,11 @@ sudo defaults write com.apple.security.revocation.plist CRLStyle None
 # Put display to sleep after 10 minutes
 /usr/bin/sudo /usr/bin/pmset -a displaysleep 10
 
+#Prevent system from sleeping
+#sudo systemsetup -setdisplaysleep Off
+#sudo systemsetup -setsleep Off
+#sudo systemsetup -setcomputersleep Off
+
 #Software update
 #While applying any changes to SoftwareUpdate defaults, set software update to OFF to avoid any conflict with the defaults system cache. (Also close the System Preferences app)
 sudo softwareupdate --schedule OFF
@@ -271,6 +276,12 @@ defaults write com.apple.dock minimize-to-application -bool true
 #关闭Dock栏的动画效果
 defaults write com.apple.dock autohide-time-moidifier -int 0;killall Dock
 #defaults write com.apple.dock autohide-time-moidifier -int 0;killall Dock
+
+#Disable screensaver at login screen
+sudo defaults write /Library/Preferences/com.apple.screensaver loginWindowIdleTime 0
+
+#Disable screensaver for user
+defaults -currentHost write com.apple.screensaver idleTime 0
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
