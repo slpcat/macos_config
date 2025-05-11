@@ -20,9 +20,9 @@
 			<key>PayloadVersion</key>
 			<integer>1</integer>
 			<key>timeServer</key>
-			<string>time.apple.com</string>
+			<string>cn.pool.ntp.org</string>
 			<key>timeZone</key>
-			<string>America/New_York</string>
+			<string>Asia/Shanghai</string>
 		</dict>
 	</array>
 	<key>PayloadDescription</key>
