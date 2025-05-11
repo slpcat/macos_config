@@ -381,7 +381,7 @@
 			<key>size-immutable</key>
 			<true/>
 			<key>tilesize</key>
-			<integer>32</integer>
+			<integer>64</integer>
 			<key>wvous-bl-corner</key>
 			<integer>10</integer>
 		</dict>
