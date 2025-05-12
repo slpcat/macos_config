@@ -31,4 +31,4 @@ sudo nvram srv=1
 sudo nvram boot-args="csr-active-config=0x67 vm_compressor=2 serverperfmode=1 srv=1 -v"
 
 #Disable Remote Apple Events
-sudo systemsetup -setremoteappleevents off"
+sudo systemsetup -setremoteappleevents off
