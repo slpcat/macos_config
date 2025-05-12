@@ -175,6 +175,9 @@ defaults write com.apple.loginwindow DisableConsoleAccess -bool true
 #sudo defaults write /Library/Preferences/com.apple.loginwindow DesktopPicture "/Library/Desktop Pictures/Aqua Blue.jpg"
 sudo defaults write /Library/Preferences/com.apple.loginwindow DesktopPicture ""
 
+#Turn off Bluetooth, if no paired devices exist
+sudo defaults write /Library/Preferences/com.apple.Bluetooth ControllerPowerState -int 0
+
 #Disable transparency in the menu bar and elsewhere
 defaults write com.apple.universalaccess reduceTransparency -bool true
 

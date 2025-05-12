@@ -40,6 +40,10 @@ sudo rm /System/Library/LaunchAgents/com.apple.mrt.uiagent.plist
 sudo rm /System/Library/CoreServices/MRTAgent.app
 sudo rm /usr/libexec/MRT
 
+#disable xprotect
+sudo launchctl bootout system /Library/Apple/System/Library/LaunchDaemons/com.apple.XProtect.daemon.scan.plist
+sudo launchctl bootout system /Library/Apple/System/Library/LaunchDaemons/com.apple.XprotectFramework.PluginService.plist
+
 #禁用和启用macosx的swap
 sudo launchctl bootout system /System/Library/LaunchDaemons/com.apple.dynamic_pager.plist
 sudo mv /System/Library/LaunchDaemons/com.apple.dynamic_pager.plist /System/Library/LaunchAgentsIgnored
@@ -117,3 +121,6 @@ sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.Spotlight.p
 sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.spotlightknowledged.importer.plist
 sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.spotlightknowledged.plist
 sudo launchctl bootout system /System/Library/LaunchAgents/com.apple.spotlightknowledged.updater.plist
+
+#Enable security auditing
+sudo launchctl bootstrap system /System/Library/LaunchDaemons/com.apple.auditd.plist
