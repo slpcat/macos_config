@@ -19,7 +19,7 @@ sudo cp limit.maxproc.plist /Library/LaunchDaemons/limit.maxproc.plist
 sudo spctl --global-disable
 
 #使用verbols显示启动过程可以：
-sudo nvram boot-args "srv=1 -v"
+#sudo nvram boot-args "srv=1 -v"
 
 #取消自动开机：
 sudo nvram AutoBoot=%00
