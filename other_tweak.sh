@@ -26,9 +26,10 @@ sudo nvram AutoBoot=%00
 #取消开机音效：
 sudo nvram BootAudio=%00
 
-sudo nvram srv=1
-
-sudo nvram boot-args="csr-active-config=0x67 vm_compressor=2 serverperfmode=1 srv=1 -v"
+#性能优先费电
+#sudo nvram srv=1
+#sudo nvram boot-args="csr-active-config=0x67 vm_compressor=2 serverperfmode=1 srv=1 -v"
+sudo nvram boot-args="csr-active-config=0x67 vm_compressor=2 -v"
 
 #Disable Remote Apple Events
 sudo systemsetup -setremoteappleevents off
