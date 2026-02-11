@@ -1,7 +1,7 @@
 #!/bin/zsh
 #Credit: Original idea and script disable.sh by pwnsdx https://gist.github.com/pwnsdx/d87b034c4c0210b988040ad2f85a68d3
 
-#Disabling unwanted services on macOS 14.5 Sonoma
+#Disabling unwanted services on macOS 15.4 Sonoma
 #Disabling SIP is required  ("csrutil disable" from Terminal in Recovery)
 #Modifications are written in /private/var/db/com.apple.xpc.launchd/ disabled.plist, disabled.501.plist
 
