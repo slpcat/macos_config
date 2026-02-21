@@ -1,6 +1,10 @@
 HomeBrew软件包管理
 https://brew.sh
 
+applite
+
+launchnext: Bring your Launchpad back
+
 ZFS文件系统
 https://openzfsonosx.org/wiki/Downloads
 
