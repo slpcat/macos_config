@@ -6,7 +6,7 @@ softwareupdate --install-rosetta
 #关闭spotlight索引
 # massively increase virtualized macOS by disabling spotlight.
 sudo mdutil -i off -a
-sudo mdutil -d /System/Volumes/Preboot /opt
+#sudo mdutil -d /System/Volumes/Preboot /opt
 
 
 sudo cp	sysctl.conf /etc/sysctl.conf
