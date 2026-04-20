@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # 启用Rosetta 2兼容层
-softwareupdate --install-rosetta
+#softwareupdate --install-rosetta
 
 #关闭spotlight索引
 # massively increase virtualized macOS by disabling spotlight.
