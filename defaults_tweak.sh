@@ -727,3 +727,5 @@ defaults write com.apple.Mail DisableReplyAnimations -bool true
 defaults write com.apple.Safari WebKitInitialTimedLayoutDelay 0.1
 defaults write com.apple.Safari WebKitResourceTimedLayoutDelay 0.1
 
+sudo defaults write /Library/Application\ Support/CrashReporter/DiagnosticMessagesHistory.plist AutoSubmit -bool false
+sudo defaults write /Library/Application\ Support/CrashReporter/DiagnosticMessagesHistory.plist ThirdPartyDataSubmit -bool false
