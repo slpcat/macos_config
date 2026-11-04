@@ -34,6 +34,8 @@ docker
 
 colima start
 
+Tart is a virtualization toolset to build, run and manage macOS and Linux virtual machines on Apple Silicon.
+
 系统打开最多文件限制
 /Library/LaunchDaemons/limit.maxfiles.plist
 最大进程数限制
