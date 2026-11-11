@@ -41,9 +41,32 @@ defaults write -g com.apple.sound.beep.volume -int 0
 defaults write -g com.apple.sound.uiaudio.enabled -bool false
 defaults write -g com.apple.springing.enabled -bool false
 
+defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool false
+defaults write NSGlobalDomain NSWindowMiniaturizeEffect -string "none"
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+
 #关闭文件保存和打印对话框的动画效果
 defaults write -g NSWindowResizeTime -float 0.01
 #defaults delete -g NSWindowResizeTime
+#关闭 Dock 图标启动时的弹跳动画
+defaults write com.apple.dock no-bouncing -bool true
+
+#加速或关闭 Mission Control / 调度中心动画
+defaults write com.apple.dock expose-animation-duration -float 0
+
+#关闭 Dock 自动隐藏的延迟与动画
+defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0
+
+#关闭 Finder 中的动画
+defaults write com.apple.finder DisableAllAnimations -bool true
+
+#关闭快速查看（Quick Look）的动画
+defaults write com.apple.finder QLPanelAnimationDuration -int 0
+
+#关闭邮件应用的发信/回信动画
+defaults write com.apple.mail DisableSendAnimations -bool true
+defaults write com.apple.mail DisableReplyAnimations -bool true
 
 #Remove Restart Button From Login Window
 #defaults write com.apple.loginwindow RestartDisabled -bool
